@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         ConectarDAO ConectarDAO = new ConectarDAO();
-        Jogar Jogar = new Jogar();
+        jogar Jogar = new jogar();
         Dificuldade Dificuldade = new Dificuldade();
         int menu;
         ConectarDAO.ConectarDao();
@@ -22,10 +22,10 @@ public class Main {
             menu = scan.nextInt();
             switch (menu) {
                 case 1:
-                    //Jogar.iniciar();
+                    Jogar.iniciar();
                     break;
                 case 2:
-                    //Dificuldade.escolher();
+                    Dificuldade.escolher();
                     break;
                 case 3:
                     ConectarDAO.mostarWinners();

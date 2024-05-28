@@ -1,5 +1,16 @@
+
 package view;
 
-public class Jogar {
-    public static  
+import java.util.*;
+
+import model.CpMinado;
+
+public class jogar {
+    public void iniciar() { 
+        Camp c = new Camp();
+        c.addMinas();
+        System.out.println(c);
+        
+    }  
+    
 }
