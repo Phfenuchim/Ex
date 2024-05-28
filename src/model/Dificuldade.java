@@ -1,9 +1,35 @@
 package model;
 
-public class Dificuldade {
-    private static int selectDif;
-    private static String nomedif;
-    public void escolher(){
+import java.util.Scanner;
 
+public class Dificuldade {
+    public void escolher(){
+        Bomb bo = new Bomb();
+        Scanner scan = new Scanner(System.in);
+        int escolha = 0;
+            
+        
+        do {
+            System.out.println("Escolha a dificuldade: ");
+            escolha = scan.nextInt();2
+            switch (escolha) {
+                case 1:
+                    
+                    break;
+            
+                case 2:
+                    
+                    break;
+
+                case 3:
+                    
+                    break;
+            
+                
+                default:
+                    break;
+            }
+        } while ();
+        if()
     }
 }
