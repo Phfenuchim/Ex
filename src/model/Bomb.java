@@ -1,5 +1,6 @@
 package model;
 public class Bomb {
-    private static int posicao;
-    private static String status;
+    public int numLinha=9;
+    public int numColuna=9;
+    public int numMinas=10;
  }

@@ -22,7 +22,7 @@ public class Main {
             menu = scan.nextInt();
             switch (menu) {
                 case 1:
-                    //Jogar.iniciar();
+                    Jogar.iniciar();
                     break;
                 case 2:
                     //Dificuldade.escolher();

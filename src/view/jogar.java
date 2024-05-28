@@ -1,5 +1,12 @@
 package view;
 
+import java.util.*;
+
+import model.CpMinado;
+
 public class Jogar {
-    public static  
+    public void iniciar() { 
+        Camp c = new Camp();
+        
+    }  
 }
