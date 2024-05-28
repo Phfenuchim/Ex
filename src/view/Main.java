@@ -8,7 +8,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         ConectarDAO ConectarDAO = new ConectarDAO();
         Jogar Jogar = new Jogar();
-        Dificuldade dificuldade = new 
+        Dificuldade Dificuldade = new Dificuldade();
         int menu;
         ConectarDAO.ConectarDao();
         
@@ -22,10 +22,10 @@ public class Main {
             menu = scan.nextInt();
             switch (menu) {
                 case 1:
-                    Jogar.jogar();
+                    //Jogar.iniciar();
                     break;
                 case 2:
-                    dificuldade();
+                    //Dificuldade.escolher();
                     break;
                 case 3:
                     ConectarDAO.mostarWinners();
@@ -37,5 +37,6 @@ public class Main {
             }
 
         } while (menu!=-1);
+        scan.close();
     }
 }
