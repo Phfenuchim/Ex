@@ -11,7 +11,7 @@ public class Dificuldade {
         
         do {
             System.out.println("Escolha a dificuldade: ");
-            escolha = scan.nextInt();2
+            escolha = scan.nextInt();
             switch (escolha) {
                 case 1:
                     
