@@ -5,13 +5,15 @@ import java.sql.SQLException; // Tratamento de Erros SQL
 import java.sql.Connection; // Armazena a Conexão Aberta
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import model.User;
 
 public class ConectarDAO {
     public Connection con = null;
     public String sql = null;
     public PreparedStatement ps;
 
-    public ConectarDao() {
+    public void ConectarDao() {
 
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Topagro1");
@@ -40,6 +42,32 @@ public class ConectarDAO {
             ps.execute();
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Erro ao criar banco de dados " + err.getMessage());
+        }
+    }
+    public ResultSet mostarWinners() {
+        sql = "Select * from ganhadores ORDER BY DESC pontuacao";
+        try {
+            ps = (PreparedStatement) con.prepareStatement(sql);
+            ResultSet resul = ps.executeQuery();
+            return resul;
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, err.getMessage());
+            return null;
+        }
+    }
+
+    public void incluir(User obj) {
+        sql = "INSERT INTO ganhadores VALUES (null,?, ?)";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, User.getNome());
+            ps.setInt(2, User.getPontuacao());
+            ps.execute();
+            ps.close();
+            JOptionPane.showMessageDialog(null, "Registro Incluído com Sucesso!");
+        } catch (SQLException err) {
+            JOptionPane.showMessageDialog(null, "Erro ao incluir usuário!" + err.getMessage());
         }
     }
 
