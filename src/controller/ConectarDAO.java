@@ -16,7 +16,7 @@ public class ConectarDAO {
     public void ConectarDao() {
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Mandy301925.");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Topagro1");
             this.criarBanco();
 
         } catch (SQLException err) {

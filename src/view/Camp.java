@@ -34,7 +34,11 @@ public class Camp {
                 }
             }
         }
+        
 
+    }
+    public CpMinado[][] getMatriz() {
+        return matriz;
     } 
     public void addMinas(){
       
