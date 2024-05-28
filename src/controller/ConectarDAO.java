@@ -16,7 +16,7 @@ public class ConectarDAO {
     public void ConectarDao() {
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "Admin", "Topagro1");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Topagro1");
             this.criarBanco();
 
         } catch (SQLException err) {
@@ -37,7 +37,8 @@ public class ConectarDAO {
             sql = "CREATE TABLE IF NOT EXISTS ganhadores("
                     + "id_winers INT UNSIGNED NOT NULL AUTO_INCREMENT ,"
                     + "nome VARCHAR(50) NOT NULL,"
-                    + "pontuacao INT UNSIGNED NOT NULL) ";
+                    + "pontuacao INT UNSIGNED NOT NULL,"
+                    + "primary key (id_winers));";
             ps = con.prepareStatement(sql);
             ps.execute();
         } catch (SQLException err) {
@@ -46,12 +47,12 @@ public class ConectarDAO {
     }
 
     public void mostarWinners() {
-        sql = "Select * from ganhadores ORDER BY DESC pontuacao";
+        sql = "SELECT * FROM ganhadores ORDER BY pontuacao DESC;";
         try {
             ps = (PreparedStatement) con.prepareStatement(sql);
             ResultSet resul = ps.executeQuery();
             while (resul.next()) {
-                int id = resul.getInt("id_winners");
+                int id = resul.getInt("id_winers");
                 String nome = resul.getString("nome");
                 int pontuacao = resul.getInt("pontuacao");
                 System.out.println("ID: " + id + ", Nome: " + nome + ", Pontuação: " + pontuacao);
