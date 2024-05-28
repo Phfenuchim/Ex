@@ -1,6 +1,5 @@
 package view;
 
-public class jogar {
-    
-    
+public class Jogar {
+    public static  
 }
