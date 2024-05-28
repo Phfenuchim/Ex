@@ -16,27 +16,9 @@ public class Camp {
                 matriz [i][j] = new CpMinado();
             }
         }
-        for (int i = 0; i < Bomb.numLinha; i++) {
-            for (int j = 0; j < Bomb.numColuna; j++) {
-                if(i>0){
-                    if(j>0)matriz [i][j].addVizinhos(matriz[i-1][j-1]);
-                    matriz [i][j].addVizinhos(matriz[i-1][j]);
-                    if(j<Bomb.numColuna-1)matriz [i][j].addVizinhos(matriz[i-1][j+1]);
-                }
-                
-                if(j>0)matriz [i][j].addVizinhos(matriz[i][j+1]);
-                if(j<Bomb.numColuna-1)matriz [i][j].addVizinhos(matriz[i][j-1]);
-
-                if(i<Bomb.numLinha-1){
-                    if(j>0)matriz [i][j].addVizinhos(matriz[i+1][j-1]);
-                    matriz [i][j].addVizinhos(matriz[i+1][j]);
-                    if(j<Bomb.numColuna-1)matriz [i][j].addVizinhos(matriz[i+1][j+1]);
-                }
-            }
-        }
-        
-
+       
     }
+        
 public CpMinado[][] getMatriz() {
         return matriz;
     } 
