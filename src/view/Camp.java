@@ -27,7 +27,7 @@ public class Camp {
                 if(j>0)matriz [i][j].addVizinhos(matriz[i][j+1]);
                 if(j<Bomb.numColuna-1)matriz [i][j].addVizinhos(matriz[i][j-1]);
 
-                if(i<Bomb.numLinha){
+                if(i<Bomb.numLinha-1){
                     if(j>0)matriz [i][j].addVizinhos(matriz[i+1][j-1]);
                     matriz [i][j].addVizinhos(matriz[i+1][j]);
                     if(j<Bomb.numColuna-1)matriz [i][j].addVizinhos(matriz[i+1][j+1]);
@@ -37,10 +37,10 @@ public class Camp {
         
 
     }
-    public CpMinado[][] getMatriz() {
+public CpMinado[][] getMatriz() {
         return matriz;
     } 
-    public void addMinas(){
+public void addMinas(){
       
         int n = Bomb.numMinas;
         Random rand = new Random();
