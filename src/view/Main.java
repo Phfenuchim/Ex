@@ -2,10 +2,13 @@ package view;
 import java.util.*;
 
 import controller.ConectarDAO;
+import model.Dificuldade;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         ConectarDAO ConectarDAO = new ConectarDAO();
+        Jogar Jogar = new Jogar();
+        Dificuldade dificuldade = new 
         int menu;
         ConectarDAO.ConectarDao();
         
@@ -19,13 +22,13 @@ public class Main {
             menu = scan.nextInt();
             switch (menu) {
                 case 1:
-                    jogar();
+                    Jogar.jogar();
                     break;
                 case 2:
                     dificuldade();
                     break;
                 case 3:
-                    ();
+                    ConectarDAO.mostarWinners();
                     break;
             
 

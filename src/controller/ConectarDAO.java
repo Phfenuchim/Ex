@@ -35,24 +35,29 @@ public class ConectarDAO {
             ps.execute();
 
             sql = "CREATE TABLE IF NOT EXISTS ganhadores("
-                    +"id_winers INT UNSIGNED NOT NULL AUTO_INCREMENT ,"
-                    +"nome VARCHAR(50) NOT NULL,"
-                    +"pontuacao INT UNSIGNED NOT NULL) ";
+                    + "id_winers INT UNSIGNED NOT NULL AUTO_INCREMENT ,"
+                    + "nome VARCHAR(50) NOT NULL,"
+                    + "pontuacao INT UNSIGNED NOT NULL) ";
             ps = con.prepareStatement(sql);
             ps.execute();
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Erro ao criar banco de dados " + err.getMessage());
         }
     }
-    public ResultSet mostarWinners() {
+
+    public void mostarWinners() {
         sql = "Select * from ganhadores ORDER BY DESC pontuacao";
         try {
             ps = (PreparedStatement) con.prepareStatement(sql);
             ResultSet resul = ps.executeQuery();
-            return resul;
-        } catch (SQLException err) {
+            while (resul.next()) {
+                int id = resul.getInt("id_winners");
+                String nome = resul.getString("nome");
+                int pontuacao = resul.getInt("pontuacao");
+                System.out.println("ID: " + id + ", Nome: " + nome + ", Pontuação: " + pontuacao);
+            }  
+        }catch (SQLException err) {
             JOptionPane.showMessageDialog(null, err.getMessage());
-            return null;
         }
     }
 
@@ -69,7 +74,6 @@ public class ConectarDAO {
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Erro ao incluir usuário!" + err.getMessage());
         }
+
     }
-
-
 }
