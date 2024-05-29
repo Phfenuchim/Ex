@@ -15,7 +15,7 @@ public class Jogo {
     public void iniciar() {
 
         Random random = new Random();
-        int numeroDeBombas = (int) (tabuleiro.getTamanho() * tabuleiro.getTamanho() * 0.2); 
+        int numeroDeBombas = (int) (tabuleiro.getTamanho() * tabuleiro.getTamanho() * 0.2); //procetagem de bombas
         for (int i = 0; i < numeroDeBombas; i++) {
             int linha = random.nextInt(tabuleiro.getTamanho());
             int coluna = random.nextInt(tabuleiro.getTamanho());
