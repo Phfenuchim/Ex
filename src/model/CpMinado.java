@@ -2,10 +2,18 @@ package model;
 import java.util.*;
 
 public class CpMinado {
-    private boolean minado;
+    public boolean minado;
     private boolean revelado;
     private boolean marcado;
     private boolean clickado;
+    public int valor;
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
     ArrayList<CpMinado> vizinhos;
     Bomb Bomb = new Bomb();
 

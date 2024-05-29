@@ -4,9 +4,11 @@ import java.util.Random;
 
 import model.Bomb;
 import model.CpMinado;
+import model.Dificuldade;
 
 public class Camp {
     Bomb Bomb = new Bomb();
+    Dificuldade Dif = new Dificuldade();
     CpMinado [] [] matriz;
 
     public Camp(){
@@ -23,18 +25,13 @@ public CpMinado[][] getMatriz() {
         return matriz;
     } 
 public void addMinas(){
-      
-        int n = Bomb.numMinas;
-        Random rand = new Random();
-        while (n< 0){ 
-            
-        int l = rand.nextInt(Bomb.numLinha);
-        int c = rand.nextInt(Bomb.numColuna);
-
-        if (matriz[l][c].minar()){
-            n--;
-        }
-    }      
+        // Crie o tabuleiro com bombas aleatórias
+        boolean[][] matriz = new boolean[Bomb.numLinha][Bomb.numColuna];
+        for (int i = 0; i < Bomb.numLinha; i++) {
+            for (int j = 0; j < Bomb.numColuna; j++) {
+                matriz[i][j] = Math.random() < Bomb.numMinas; // 20% de chance de ter uma bomba
+            }
+        }   
  }
   
  public String toString(){

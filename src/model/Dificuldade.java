@@ -21,21 +21,17 @@ public class Dificuldade {
             escolha = scan.nextInt();
             switch (escolha) {
                 case 1:
-                    bo.numMinas = 3;
-                    Jogar.iniciar();
-                    break;
-            
+                     bo.numMinas = 0.2;
+                     Jogar.iniciar();
+                     break;
                 case 2:
-                    bo.numMinas = 5;
-                    Jogar.iniciar();
-                    break;
-
+                     bo.numMinas = 0.3;
+                     Jogar.iniciar();
+                     break;
                 case 3:
-                    bo.numMinas = 6;
-                    Jogar.iniciar();
-                    break;
-            
-                
+                     bo.numMinas = 0.5;
+                     Jogar.iniciar();
+                     break;
                 default:
                     break;
             }
