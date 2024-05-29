@@ -3,8 +3,6 @@ package view;
 import java.util.Random;
 import java.util.Scanner;
 
-
-
 public class Jogo {
     private Tabuleiro tabuleiro;
     private Scanner scanner;
@@ -26,6 +24,7 @@ public class Jogo {
 
         // Jogo principal
         while (true) {
+            // Exiba o tabuleiro visual
             exibirTabuleiro();
 
             // Peça ao usuário para escolher uma posição
@@ -42,6 +41,7 @@ public class Jogo {
                 // Contar bombas ao redor e atualizar o valor da célula
                 int bombasAoRedor = contarBombasAoRedor(linha, coluna);
                 tabuleiro.getCelula(linha, coluna).setValor((char) ('0' + bombasAoRedor));
+                tabuleiro.getCelula(linha, coluna).revelar(); // Revela a célula após ser selecionada
             }
         }
     }
